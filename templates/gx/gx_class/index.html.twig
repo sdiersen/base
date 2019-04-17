@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GX Classes{% endblock %}
+
+{% block body %}
+    <a href="{{ path('gx_gx_class_new') }}">Create new</a>
+    <h1>Group Fitness Index of Classes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>ShortDescription</th>
+                <th>ShortName</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gx_class in gx_classes %}
+            <tr>
+                <td>{{ gx_class.name }}</td>
+                <td>{{ gx_class.description }}</td>
+                <td>{{ gx_class.shortDescription }}</td>
+                <td>{{ gx_class.shortName }}</td>
+                <td>
+                    <a href="{{ path('gx_gx_class_edit', {'id': gx_class.id}) }}"><i class="fas fa-pencil"></i></a>
+                    <a href="{{ path('gx_gx_class_show', {'id': gx_class.id}) }}"><i class="far fa-eye"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gx_gx_class_new') }}">Create new</a>
+{% endblock %}

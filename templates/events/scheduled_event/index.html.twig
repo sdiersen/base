@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScheduledEvent index{% endblock %}
+
+{% block body %}
+    <h1>ScheduledEvent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>StartTime</th>
+                <th>EndTime</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for scheduled_event in scheduled_events %}
+            <tr>
+                <td>{{ scheduled_event.id }}</td>
+                <td>{{ scheduled_event.startDate ? scheduled_event.startDate|date('Y-m-d') : '' }}</td>
+                <td>{{ scheduled_event.endDate ? scheduled_event.endDate|date('Y-m-d') : '' }}</td>
+                <td>{{ scheduled_event.startTime ? scheduled_event.startTime|date('H:i:s') : '' }}</td>
+                <td>{{ scheduled_event.endTime ? scheduled_event.endTime|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('events_scheduled_event_show', {'id': scheduled_event.id}) }}">show</a>
+                    <a href="{{ path('events_scheduled_event_edit', {'id': scheduled_event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('events_scheduled_event_new') }}">Create new</a>
+{% endblock %}

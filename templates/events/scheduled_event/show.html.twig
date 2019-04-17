@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScheduledEvent{% endblock %}
+
+{% block body %}
+    <h1>ScheduledEvent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ scheduled_event.id }}</td>
+            </tr>
+            <tr>
+                <th>StartDate</th>
+                <td>{{ scheduled_event.startDate ? scheduled_event.startDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndDate</th>
+                <td>{{ scheduled_event.endDate ? scheduled_event.endDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>StartTime</th>
+                <td>{{ scheduled_event.startTime ? scheduled_event.startTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndTime</th>
+                <td>{{ scheduled_event.endTime ? scheduled_event.endTime|date('H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('events_scheduled_event_index') }}">back to list</a>
+
+    <a href="{{ path('events_scheduled_event_edit', {'id': scheduled_event.id}) }}">edit</a>
+
+    {{ include('events_scheduled_event/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,26 @@
+<a href="{{ path('test_new') }}">Create Task</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Taske</th>
+        <th>Due Date</th>
+        <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+        <tr>
+            <td>{{ task.task }}</td>
+            <td>{{ task.getDueDateAsString }}</td>
+            <td>
+                <a href="#"><i class="fas fa-pencil"></i></a>
+                <a href="#"><i class="far fa-eye"></i></a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="6">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

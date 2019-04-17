@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GxClass{% endblock %}
+
+{% block body %}
+    <h1>Edit GxClass</h1>
+
+    {{ include('gx/gx_class/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('gx_gx_class_index') }}">back to list</a>
+
+    {{ include('gx/gx_class/_delete_form.html.twig') }}
+{% endblock %}

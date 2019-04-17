@@ -1,0 +1,18 @@
+{% if is_granted('ROLE_ADMIN') %}
+<li class="nav-item dropdown">
+    <a class="nav-link fe-nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Users
+    </a>
+    <div class="dropdown-menu" aria-labelledby="userDropdown">
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_site_members') }}">Site Members</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_club_members') }}">Club Members</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_employees') }}">Employees</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_admins') }}">Admins</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_gx_instructors') }}">GX Instructors</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_personal_trainers') }}">Personal Trainers</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_swim_instructors') }}">Swim Instructors</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('user_show_supermen') }}">Super Users</a>
+
+    </div>
+</li>
+{% endif %}

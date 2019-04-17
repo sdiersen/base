@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Description{% endblock %}
+
+{% block body %}
+    <h1>Description</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ description.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ description.title }}</td>
+            </tr>
+            <tr>
+                <th>ShortTitle</th>
+                <td>{{ description.shortTitle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ description.description }}</td>
+            </tr>
+            <tr>
+                <th>ShortDescription</th>
+                <td>{{ description.shortDescription }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('gx_description_index') }}">back to list</a>
+
+    <a href="{{ path('gx_description_edit', {'id': description.id}) }}">edit</a>
+
+    {{ include('gx_description/_delete_form.html.twig') }}
+{% endblock %}

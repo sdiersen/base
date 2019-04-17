@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Class Schedule{% endblock %}
+
+{% block body %}
+    <a href="{{ path('gx_scheduled_class_new') }}">Schedule a Class</a>
+    <h2>List of Scheduled Classes</h2>
+    <ul>
+        {% for class in allClasses %}
+            <li>{{ class.gxClass.shortName }}</li>
+        {% endfor %}
+    </ul>
+    <h2>{% if loc is not null %}{{ loc.name }}{% endif %}</h2>
+{% endblock %}

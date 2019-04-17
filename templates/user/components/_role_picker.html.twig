@@ -1,0 +1,8 @@
+{% if is_granted('ROLE_ADMIN') %}
+    {% for role in roles %}
+        <div>
+            <input type="checkbox" id="{{ role }}" name="role[]" value="{{ role }}">
+            <label for="{{ role }}">{{ role }}</label>
+        </div>
+    {% endfor %}
+{% endif %}

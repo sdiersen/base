@@ -1,0 +1,15 @@
+<li class="nav-item dropdown">
+    <a class="nav-link fe-nav-link  dropdown-toggle" href="#" id="locationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Locations
+    </a>
+    <div class="dropdown-menu" aria-labelledby="locationDropdown">
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="dropdown-item fe-nav-link " href="{{ path('location_index') }}">Locations</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('location_new') }}">Create Location</a>
+        <div class="dropdown-divider"></div>
+    {% endif %}
+        <a class="dropdown-item fe-nav-link " href="{{ path('base_buffalo') }}">Buffalo</a>
+        <a class="dropdown-item fe-nav-link " href="{{ path('base_monticello') }}">Monticello</a>
+        <a class="dropdown-item fe-nav-link " href="{{ path('base_zimmerman') }}">Zimmerman</a>
+    </div>
+</li>

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2>Schedule a Class</h2>
+    {% if classShortNames is not empty %}
+    <form class="" method="post">
+        <label for="classSelect">Choose Class: </label>
+        <select id="classSelect" name="classSelect">
+            <option value="" selected disabled hidden></option>
+            {% for className in classShortNames %}
+                <option value="{{ className }}">{{ className }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+
+        <label for="startTime">Start Time: </label>
+        <input type="time" id="startTime" name="startTime">
+
+        <label for="endTime">End Time: </label>
+        <input type="time" id="endTime" name="endTime">
+
+        <br>
+
+        <label for="startDate">Start Date: </label>
+        <input type="date" id="startDate" name="startDate">
+
+        <label for="endDate">End Date: </label>
+        <input type="date" id="endDate" name="endDate">
+
+        <br>
+
+        <label for="instructorSelect">Instructor: </label>
+        <select id="instructorSelect" name="instructorSelect">
+            <option value="" selected disabled hidden></option>
+            {% for instructor in instructors %}
+                <option value="{{ instructor.id }}">{{ instructor.firstName }} {{ instructor.lastName }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+
+        <label for="locationSelect">Location: </label>
+        <select id="locationSelect" name="locationSelect">
+            <option value="" selected disabled hidden></option>
+            {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Create Scheduled Class
+        </button>
+    </form>
+    {% else %}
+        <br>
+        <h2>No classes created yet</h2>
+        <a href="{{ path('gx_gx_class_new') }}">Create a class</a>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    Schedule Class
+{% endblock %}
+

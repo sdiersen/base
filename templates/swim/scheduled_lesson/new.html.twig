@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ScheduledLesson{% endblock %}
+
+{% block body %}
+    <h1>Create new ScheduledLesson</h1>
+
+    {{ include('swim_scheduled_lesson/_form.html.twig') }}
+
+    <a href="{{ path('swim_scheduled_lesson_index') }}">back to list</a>
+{% endblock %}

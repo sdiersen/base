@@ -1,0 +1,34 @@
+<div class="collapse navbar-collapse" id="baseSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link fe-nav-link" href="{{ path('base_homepage') }}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fe-nav-link" href="{{ path('base_buffalo') }}">Buffalo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fe-nav-link" href="{{ path('base_monticello') }}">Monticello</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fe-nav-link" href="{{ path('base_zimmerman') }}">Zimmerman</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fe-nav-link" href="#">Swimming</a>
+        </li>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="nav-item">
+                <a class="nav-link fe-nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fe-nav-link" href="{{ path('base_logout') }}">Sign Out</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link fe-nav-link" href="{{ path('base_login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fe-nav-link" href="{{ path('base_register') }}">Register</a>
+            </li>
+        {% endif %}
+    </ul>
+</div>

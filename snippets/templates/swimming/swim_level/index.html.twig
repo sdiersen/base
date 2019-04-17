@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Swim Levels{% endblock %}
+
+{% block body %}
+    <h1>Swim Levels with Descriptions</h1>
+    <a href="{{ path('swimming_swim_level_new') }}"><i class="fas fa-plus-circle"></i>&nbsp; Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Age Range</th>
+                <th>Requirements</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for swim_level in swim_levels %}
+                <tr>
+                    <td>
+                        {{ swim_level.title }}
+                    </td>
+                    <td>
+                        {{ swim_level.description }}
+                    </td>
+                    <td>
+                        {{ swim_level.ageRange }}
+                    </td>
+                    <td>
+                        {{ swim_level.requirements }}
+                    </td>
+                    <td>
+                        <a href="{{ path('swimming_swim_level_show', {'id': swim_level.id}) }}"><i class="far fa-eye"></i></a>
+                        <a href="{{ path('swimming_swim_level_edit', {'id': swim_level.id}) }}"><i class="fas fa-edit"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {#<table class="table">#}
+        {#<thead>#}
+        {#<tr>#}
+            {#<th class="sl_table_a">Progression</th>#}
+            {#<th class="sl_table_a">Title</th>#}
+            {#<th>Description</th>#}
+            {#<th>Requirements</th>#}
+            {#<th class="sl_table_a">AgeRange</th>#}
+            {#<th class="sl_table_a">Actions</th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {#<tbody>#}
+        {#{% for swim_level in swim_levels %}#}
+            {#<tr>#}
+                {#<td>#}
+                    {#{% if not loop.first %}#}
+                        {#<a class="btn btn-dark"#}
+                           {#href="{{ path('swim_levels_lower_progression', {'id': swim_level.id}) }}"#}
+                           {#role="button">#}
+                            {#<span style="font-size: 2em;color: #ff6600">#}
+                                {#<i class="fas fa-arrow-up"></i>#}
+                            {#</span>#}
+                        {#</a>#}
+                    {#{% else %}#}
+                        {#<a class="btn btn-dark disabled"#}
+                           {#style="visibility: hidden;"#}
+                           {#href="#" role="button">#}
+                            {#<span style="font-size: 2em; color:#ff6600">#}
+                                {#<i class="fas fa-arrow-up"></i>#}
+                            {#</span>#}
+                        {#</a>#}
+                    {#{% endif %}#}
+                    {#{% if not loop.last %}#}
+                        {#<a class="btn btn-dark"#}
+                           {#href="{{ path('swim_levels_raise_progression', {'id': swim_level.id}) }}"#}
+                           {#role="button">#}
+                            {#<span style="font-size: 2em;color: #ff6600">#}
+                                {#<i class="fas fa-arrow-down"></i>#}
+                            {#</span>#}
+                        {#</a>#}
+                    {#{% else %}#}
+                        {#<a class="btn btn-dark disabled"#}
+                           {#style="visibility: hidden;"#}
+                           {#href="#" role="button">#}
+                            {#<span style="font-size: 2em; color:#ff6600">#}
+                                {#<i class="fas fa-arrow-down"></i>#}
+                            {#</span>#}
+                        {#</a>#}
+                    {#{% endif %}#}
+                {#</td>#}
+                {#<td class="sl_table_a">{{ swim_level.title }}</td>#}
+                {#<td>{{ swim_level.description }}</td>#}
+                {#<td>{{ swim_level.requirements }}</td>#}
+                {#<td class="sl_table_a">{{ swim_level.ageRange }}</td>#}
+                {#<td class="sl_table_a">#}
+                    {#<a class="btn btn-success" href="{{ path('swim_levels_edit', {'id': swim_level.id}) }}" role="button">edit</a>#}
+                    {#<a class="btn btn-danger" href="{{ path('swim_levels_delete', {'id': swim_level.id}) }}" role="button">delete</a>#}
+                {#</td>#}
+            {#</tr>#}
+        {#{% else %}#}
+            {#<tr>#}
+                {#<td colspan="6">no records found</td>#}
+            {#</tr>#}
+        {#{% endfor %}#}
+        {#</tbody>#}
+    {#</table>#}
+    {#<hr>#}
+    {#<div id="newSwimLevelDiv"></div>#}
+    {#<button style="display:block" class="btn btn-primary mx-auto w-25" id="swimLevelCreate" type="submit">Create New Swim Level</button>#}
+
+{% endblock %}

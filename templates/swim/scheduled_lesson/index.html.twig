@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScheduledLesson index{% endblock %}
+
+{% block body %}
+    <h1>ScheduledLesson index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>StartTime</th>
+                <th>EndTime</th>
+                <th>DaysOfWeek</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for scheduled_lesson in scheduled_lessons %}
+            <tr>
+                <td>{{ scheduled_lesson.id }}</td>
+                <td>{{ scheduled_lesson.startDate ? scheduled_lesson.startDate|date('Y-m-d') : '' }}</td>
+                <td>{{ scheduled_lesson.endDate ? scheduled_lesson.endDate|date('Y-m-d') : '' }}</td>
+                <td>{{ scheduled_lesson.startTime ? scheduled_lesson.startTime|date('H:i:s') : '' }}</td>
+                <td>{{ scheduled_lesson.endTime ? scheduled_lesson.endTime|date('H:i:s') : '' }}</td>
+                <td>{{ scheduled_lesson.daysOfWeek }}</td>
+                <td>
+                    <a href="{{ path('swim_scheduled_lesson_show', {'id': scheduled_lesson.id}) }}">show</a>
+                    <a href="{{ path('swim_scheduled_lesson_edit', {'id': scheduled_lesson.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('swim_scheduled_lesson_new') }}">Create new</a>
+{% endblock %}

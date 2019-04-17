@@ -1,0 +1,13 @@
+{% if is_granted('ROLE_ADMIN') %}
+<li class="nav-item dropdown">
+    <a class="nav-link fe-nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Employees
+    </a>
+    <div class="dropdown-menu" aria-labelledby="userDropdown">
+        <a class="dropdown-item fe-nav-link " href="{{ path('user_index') }}">List</a>
+        <a class="dropdown-item fe-nav-link " href="{{ path('user_new') }}">Create</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('admin_role_index') }}">List Roles</a>
+        <a class="dropdown-item fe-nav-link" href="{{ path('admin_role_new') }}">Create Role</a>
+    </div>
+</li>
+{% endif %}

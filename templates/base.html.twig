@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('build/layout.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <div id="bodyContainer">
+            <div id="navigation">
+                {% block navigation %}
+                    {% include 'navigation.html.twig' %}
+                {% endblock %}
+            </div>
+            <div id="header">
+                {% block header %}
+
+                {% endblock %}
+            </div>
+            <div id="body">
+                {% block body %}
+                {% endblock %}
+            </div>
+            <div id="footer">
+                {% block footer %}
+                    {% include 'footer.html.twig' %}
+                {% endblock %}
+            </div>
+            {% block javascripts %}
+                <script src="{{ asset('build/layout.js') }}"></script>
+            {% endblock %}
+        </div>
+    </body>
+</html>

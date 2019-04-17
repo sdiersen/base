@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container fe-navigation-container">
+        <div class="row fe-navigation-row align-items-center">
+            <div class="col-9 text-center">
+                <a href="{{ path('base_homepage') }}">
+                    <img class="navbar-brand w-50 float-left" src="{{ asset('build/static/Logo.png') }}">
+                </a>
+            </div>
+            {% if is_granted('ROLE_CLUB_MEMBER') == false %}
+                <div class="col-3 align-items-end">
+                    <form action="http://www.fitevomn.com/join-now?">
+                        <button id="joinButton" type="submit" class="btn btn-secondary float-right">Join Now!</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+        <div class="row fe-navigation-row align-items-center">
+            <div class="col-12 d-flex">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav ml-auto">
+                    {% include 'navigation/_navigation_locations.html.twig' %}
+                    {% include 'navigation/_navigation_swimming.html.twig' %}
+                    {% include 'navigation/_navigation_groupfitness.html.twig' %}
+                    {% include 'navigation/_navigation_user.html.twig' %}
+                    {% include 'navigation/_navigation_account.html.twig' %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Description index{% endblock %}
+
+{% block body %}
+    <h1>Description index</h1>
+
+    <a href="{{ path('gx_description_new') }}"><i class="fas fa-plus-circle"></i>&nbsp; Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Short Title</th>
+                <th>Description</th>
+                <th>Short Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for description in descriptions %}
+            <tr>
+                <td>{{ description.title }}</td>
+                <td>{{ description.shortTitle }}</td>
+                <td>{{ description.description }}</td>
+                <td>{{ description.shortDescription }}</td>
+                <td>
+                    <a href="{{ path('gx_description_show', {'id': description.id}) }}"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('gx_description_edit', {'id': description.id}) }}"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gx_description_new') }}"><i class="fas fa-plus-circle"></i> Create new</a>
+{% endblock %}

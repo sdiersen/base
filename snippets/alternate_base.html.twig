@@ -1,0 +1,55 @@
+{% block leftColumn %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Join Now</h1>
+            </div>
+        </div>
+        <div class="row w-100 mx-auto">
+            <div class="col w-100">
+                <h1>Get our App</h1>
+                <style>
+                    a.googleBadge:link { text-decoration:none; }
+                    a.googleBadge:hover { background:initial;}
+                    a.googleBadge:visited {}
+                </style>
+                <a class="googleBadge" target="_blank" href="https://play.google.com/store/apps/details?id=com.netpulse.mobile.fitnessevolutionmn&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img width="100%" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/></a>
+
+                <div id='ibb-widget-root-1220640638'>
+
+                </div><script>(function(t,e,i,d){var o=t.getElementById(i),n=t.createElement(e);o.style.height=150;o.style.width=180;o.style.display='inline-block';n.id='ibb-widget',n.setAttribute('src',('https:'===t.location.protocol?'https://':'http://')+d),n.setAttribute('width','180'),n.setAttribute('height','150'),n.setAttribute('frameborder','0'),n.setAttribute('scrolling','no'),o.appendChild(n)})(document,'iframe','ibb-widget-root-1220640638',"banners.itunes.apple.com/banner.html?partnerId=&aId=&bt=catalog&t=catalog_black&id=1220640638&c=us&l=en-US&w=180&h=150&store=apps");</script>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block rightColumn %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Buffalo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2812.025010415924!2d-93.87613564946437!3d45.1865899598436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b4a3c6075c7113%3A0xfbb201372821c7af!2sFitness+Evolution!5e0!3m2!1sen!2sus!4v1545258594838" width="300" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div itemscope itemtype="http://schema.org/LocalBusiness">
+                    <a class="pageLink" href="{{ path('base_buffalo') }}">
+                        <span itemprop="name" class="business-name">Buffalo</span>
+                    </a>
+                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">101 14<sup>th</sup> Street NE</span><br/>
+                        <span itemprop="addressLocality">Buffalo</span>,
+                        <span itemprop="addressRegion">MN</span>
+                    </div>
+                    <span itemprop="telephone">763-682-4300</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

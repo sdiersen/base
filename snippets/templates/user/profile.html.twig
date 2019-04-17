@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+
+{% block body %}
+    <h2 class="text-center">{% if user.firstName %}{{ user.firstName }}'s{% else %}User's{% endif %} Profile</h2>
+    <form class="form-signin" method="post">
+        <label for="inputFirstName" class="sr-only">First Name:</label>
+        <input type="text" id="inputFirstName" class="form-control" name="firstName" value="{{ user.firstName }}" placeholder="First" required>
+
+        <label for="inputLastName" class="sr-only">Last Name:</label>
+        <input type="text" id="inputLastName" class="form-control" name="lastName" value="{{ user.lastName }}" placeholder="Last Name" required>
+
+        <label for="inputPhoneNumber" class="sr-only">Phone Number:</label>
+        <input type="tel" size="12" minlength="10" maxlength="12" pattern="\b\d{3}-?\d{3}-?\d{4}\b" id="inputPhoneNumber" class="form-control" name="phoneNumber" value="{{ user.phone }}" placeholder="XXX-XXX-XXXX" required>
+
+        <fieldset>
+            <legend>Select roles</legend>
+        {% if is_granted('ROLE_ADMIN') %}
+            {% for role in roles %}
+            <div>
+                <input type="checkbox" id="{{ role.displayName }}" name="role[]" value="{{ role.name }}">
+                <label for="{{ role.displayName }}">{{ role.displayName }}</label>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </fieldset>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Make Changes
+        </button>
+    </form>
+{% endblock %}
+

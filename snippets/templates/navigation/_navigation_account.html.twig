@@ -1,0 +1,15 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <li class="nav-item">
+        <a class="nav-link fe-nav-link" href="{{ path('user_profile') }}">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link fe-nav-link" href="{{ path('base_logout') }}">Sign Out</a>
+    </li>
+{% else %}
+    <li class="nav-item">
+        <a class="nav-link fe-nav-link" href="{{ path('base_login') }}">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link fe-nav-link" href="{{ path('base_register') }}">Register</a>
+    </li>
+{% endif %}

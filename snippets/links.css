@@ -1,0 +1,36 @@
+//links
+.pageLink:link {
+    text-decoration: none;
+    color: $color-orange;
+    font-size: 1.5em;
+}
+
+.pageLink:visited {
+    color: $color-orange;
+}
+
+.pageLink:hover {
+    background-color: $color-orange-alpha-50;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    font-weight: bolder;
+    color: black;
+}
+
+.innerPageLink:link {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-decoration: none;
+    color: $color-orange;
+}
+
+.innerPageLink:visited {
+    color: $color-orange;
+}
+
+.innerPageLink:hover {
+    background-color: $color-orange;
+    border-radius: .5em;
+    color: black;
+}

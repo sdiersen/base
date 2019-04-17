@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+
+{% block body %}
+    <h2 class="text-center">Create User</h2>
+    <form class="" method="post">
+
+        <label for="inputFirstName" class="">First Name: </label>
+        <input type="text" id="inputFirstName" class="" name="firstName" value="{{ user.firstName }}" placeholder="First Name" required>
+
+        <label for="inputLastName" class="">Last Name: </label>
+        <input type="text" id="inputLastName" class="" name="lastName" value="{{ user.lastName }}" placeholder="Last Name" required>
+
+        <br>
+
+        <label for="inputUname" class="">Username: </label>
+        <input type="text" id="inputUname" name="username" placeholder="Username">
+
+
+        <label for="inputPassword" class="">Password: </label>
+        <input type="password" id="inputPassword" name="password" title="
+                {% if errors is not empty and errors["password"] is not empty %}
+                    {{ errors["password"] }}"
+                    class="inputError"
+                {% else %}
+                    {{ passwordRules }}"
+                {% endif %}>
+
+        <label for="inputRepeatPassword" class="">Repeat Password: </label>
+        <input type="password" id="inputRepeatPassword" name="repeatPassword" title="
+                {% if errors is not empty and errors["password"] is not empty %}
+                    {{ errors["password"] }}"
+                    class="inputError"
+                {% else %}
+                    {{ passwordRules }}"
+                {% endif %}>
+        <fieldset>
+            <legend class="text-center">Roles</legend>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        {% for normal in normalRoles %}
+                            <input type="checkbox" id="{{ normal }}" name="role[]" value="{{ normal }}">
+                            <label for="{{ normal }}">{{ normal }}</label><br>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-4">
+                        {% for employee in employeeRoles %}
+                            <input type="checkbox" id="{{ employee }}" name="role[]" value="{{ employee }}">
+                            <label for="{{ employee }}">{{ employee }}</label><br>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-4">
+                        {% for admin in adminRoles %}
+                            <input type="checkbox" id="{{ admin }}" name="role[]" value="{{ admin }}">
+                            <label for="{{ admin }}">{{ admin }}</label><br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Make Changes
+        </button>
+    </form>
+{% endblock %}

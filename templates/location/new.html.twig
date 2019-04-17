@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Create Club Location</h2>
+    <br>
+
+        <form class="" method="post">
+            <label for="locationName">Location Name: </label>
+            <input type="text" name="locationName" id="locationName">
+
+            <hr>
+
+            <h3>Address</h3>
+            <label for="addressStreetOne">Street: </label>
+            <input type="text" name="addressStreetOne" id="addressStreetOne"> <br>
+
+            <label for="addressStreetTwo">Street (Optional): </label>
+            <input type="text" name="addressStreetTwo" id="addressStreetTwo"> <br>
+
+            <label for="addressCity">City: </label>
+            <input type="text" name="addressCity" id="addressCity">
+
+            <label for="addressState">State: </label>
+            <input type="text" name="addressState" id="addressState">
+
+            <label for="addressZip">Zip: </label>
+            <input type="text" name="addressZip" id="addressZip">
+
+
+            <hr>
+            <h3>Phone</h3>
+            <label for="phoneNumber">Phone: </label>
+            <input type="text" name="phoneNumber" id="phoneNumber">
+
+            <hr>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Create New Club Location
+            </button>
+        </form>
+
+{% endblock %}
+
+{% block title %}
+    Create Location
+{% endblock %}
+

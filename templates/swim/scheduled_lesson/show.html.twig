@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScheduledLesson{% endblock %}
+
+{% block body %}
+    <h1>ScheduledLesson</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ scheduled_lesson.id }}</td>
+            </tr>
+            <tr>
+                <th>StartDate</th>
+                <td>{{ scheduled_lesson.startDate ? scheduled_lesson.startDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndDate</th>
+                <td>{{ scheduled_lesson.endDate ? scheduled_lesson.endDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>StartTime</th>
+                <td>{{ scheduled_lesson.startTime ? scheduled_lesson.startTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndTime</th>
+                <td>{{ scheduled_lesson.endTime ? scheduled_lesson.endTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DaysOfWeek</th>
+                <td>{{ scheduled_lesson.daysOfWeek }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('swim_scheduled_lesson_index') }}">back to list</a>
+
+    <a href="{{ path('swim_scheduled_lesson_edit', {'id': scheduled_lesson.id}) }}">edit</a>
+
+    {{ include('swim_scheduled_lesson/_delete_form.html.twig') }}
+{% endblock %}

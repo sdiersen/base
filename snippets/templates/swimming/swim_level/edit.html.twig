@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SwimLevel{% endblock %}
+
+{% block body %}
+    <h1>Edit SwimLevel</h1>
+
+    {{ include('swimming/swim_level/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('swimming_swim_level_index') }}">back to list</a>
+
+    {{ include('swimming/swim_level/_delete_form.html.twig') }}
+{% endblock %}

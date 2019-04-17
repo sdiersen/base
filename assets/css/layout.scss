@@ -1,0 +1,294 @@
+$color-orange: #FF6600;
+$color-orange-alpha-20: rgba(255,102,0,.2);
+$color-orange-alpha-25: rgba(255,102,0,.25);
+$color-orange-alpha-40: rgba(255,102,0,.4);
+$color-orange-alpha-50: rgba(255,102,0,.5);
+$color-orange-alpha-75: rgba(255,102,0,.75);
+$color-orange-alpha-80: rgba(255,102,0,.8);
+$color-grey: rgb(150,150,150);
+$color-grey-alpha-40: rgba(150,150,150,.4);
+$color-background-dark: #343A40;
+$color-background-light: #F8F9FA;
+$color-text-color-dark: #E9E9E9;
+$color-text-color-light: #5A5A5A;
+$color-silver: #a1a1a1;
+$base-font-size: 16px;
+
+//********************************************************************
+//                            MAIN
+//********************************************************************
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  margin:0 auto;
+  background-color: $color-background-dark;
+  max-width: 1344px;
+  font-family: 'Muli', sans-serif;
+  color: $color-text-color-dark;
+}
+
+footer {
+  color: $color-orange-alpha-50;
+  text-align: center;
+}
+
+ul, li {
+  list-style-type:none;
+}
+
+.nav-link {
+  margin-right: 2rem;
+}
+
+a.nav-link {
+  padding: 0 2px;
+  margin: 0;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+  line-height: 1.25em;
+}
+
+a:visited {
+  color:black;
+}
+
+a:hover {
+  background: $color-orange-alpha-25;
+  border-radius: .5em;
+  color: $color-orange;
+}
+
+/*--------------------------------------------------------------------------------
+                                    NAVIGATION
+ -------------------------------------------------------------------------------*/
+#joinButton {
+  background-color: $color-orange-alpha-40;
+  font-size: 2rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+  font-style: italic;
+}
+
+#joinButton:hover {
+  background-color: $color-orange-alpha-80;
+}
+
+.fe-navigation-container {
+  max-width: inherit;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.fe-navigation-row {
+  width:100%;
+}
+.navbar-expand-md > .container {
+  flex-wrap: wrap;
+}
+/*--------------------------------------------------------------------------------
+                                    HEADER
+ -------------------------------------------------------------------------------*/
+.fe-carousel-item {
+  height: 600px;
+  //width: 800px;
+  //margin: 0 auto;
+}
+
+.fe-carousel-banner {
+  background-repeat: no-repeat;
+  height:inherit;
+  //width: inherit;
+}
+
+#banner1 {
+  background-image: url('../public/build/static/test_banner_1_1344.jpg');
+}
+
+#banner2 {
+  background-image: url('../public/build/static/test_banner_2_1344.jpg');
+  background-position-y: -100px;
+}
+
+#banner3 {
+  background-image: url('../public/build/static/test_banner_3_1344.jpg');
+  background-position-y: -50px ;
+}
+
+/*--------------------------------------------------------------------------------
+                                    CONTENT
+ -------------------------------------------------------------------------------*/
+
+#missionStatementCard {
+  background-color: $color-background-light
+}
+
+.table {
+  color: $color-orange-alpha-80;
+}
+
+.classCell {
+  text-align: center;
+}
+
+.classCell:hover {
+  background-color: $color-orange-alpha-20;
+}
+
+tr#weekdayHeaders th {
+  text-align: center;
+}
+.obscure {
+  background-color: $color-grey-alpha-40;
+}
+
+footer h2, footer h3, footer h4 {
+  color: $color-orange;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+#titleParagraph {
+  font-size: 1.5em;
+  color: $color-silver;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+
+.fe-navbar-brand {
+  width:25%;
+}
+
+.fe-nav-link {
+  margin: 0 .5em;
+  font-size:larger;
+  color:$color-orange-alpha-75 !important;
+}
+.fe-nav-link:hover {
+  color:$color-orange !important;
+  font-weight: bolder;
+}
+
+.fe-banner {
+  background: url("../public/build/static/banner_1.jpg") no-repeat center top;
+  height: fit-content;
+  //background-color: #5eb5e0;
+}
+
+
+//bootstrap alterations
+.bg-dark {
+  background-color: rgba(52,58,68,.5);
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position:relative;
+  min-height: 150px;
+}
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.navbar {
+  padding: 1rem 0.5rem;
+}
+
+/*--------------------------------------------------------------------------------
+                                    SMALL SCREEN
+ -------------------------------------------------------------------------------*/
+@media only screen and (max-width: 480px) {
+  body {
+    max-width: 100%;
+    margin: auto;
+  }
+  h1 {
+    font-size: larger;
+  }
+
+
+  /*--------------------------------------------------------
+                            HEADER
+   --------------------------------------------------------*/
+  .fe-carousel-item {
+    height: 203px;
+    //width: 800px;
+    //margin: 0 auto;
+  }
+
+  .fe-carousel-banner {
+    background-repeat: no-repeat;
+    height:inherit;
+    //width: inherit;
+  }
+
+  #banner1 {
+    background-image: url('../public/build/static/test_banner_1_360.jpg');
+  }
+
+  #banner2 {
+    background-image: url('../public/build/static/test_banner_2_360.jpg');
+    background-position-y: 0px;
+  }
+
+  #banner3 {
+    background-image: url('../public/build/static/test_banner_3_360.jpg');
+    background-position-y: 0px;
+  }
+
+}
+/*--------------------------------------------------------------------------------
+                                  END SMALL SCREEN
+ -------------------------------------------------------------------------------*/

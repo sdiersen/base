@@ -1,0 +1,118 @@
+/*-------------------------------------------------------------------------
+                               HEADER
+-------------------------------------------------------------------------*/
+
+.headerLogoContainer {
+  width: 100%;
+  position: absolute;
+}
+
+.headerLogo {
+  position: absolute;
+  color: $color-orange;
+}
+
+#hamburgerMenu {
+  position: absolute;
+  top: 5px;
+  left: 90%;
+}
+
+/*-------------------------------------------------------------------------
+                                 CAROUSEL
+-------------------------------------------------------------------------*/
+
+.myCarousel {
+  position: absolute;
+}
+
+.myCarouselPrev, .myCarouselNext {
+  position: absolute;
+  height: inherit;
+  z-index: 1; /* for full width */
+background-color: rgba(0,0,0,0); /* for full width */
+}
+
+.myCarouselPrevItem, .myCarouselNextItem {
+    position: absolute;
+    color: $color-orange;
+    opacity: .25;
+}
+
+.myCarouselPrevItem:hover, .myCarouselNextItem:hover {
+    opacity: 1;
+}
+
+img.carouselMoveSVG:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+li.myCarouselItem img, li.myCarouselItemThumb img {
+    width:100%;
+    height:100%;
+}
+
+.myCarouselListContainer {
+    position: absolute;
+}
+
+.myCarouselList {
+    position: relative;
+    height: inherit;
+}
+
+.myCarouselItem {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    display: none;
+}
+
+#myCarouselActiveItem {
+    color: black;
+    display: block;
+}
+
+.myCarouselThumbnails {
+    position: absolute;
+    background-color: antiquewhite;
+}
+
+.myCarouselItemThumb {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+#myCarouselActiveItemThumb {
+    -webkit-box-shadow: inset 0 0 1em gold, 0 0 1em red;
+    -moz-box-shadow: inset 0 0 1em gold, 0 0 1em red;
+    box-shadow: inset 0 0 1em gold, 0 0 1em red;
+}
+
+ul.myCarouselList, ul.myCarouselListThumb {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+ul.myCarouselListThumb {
+    text-align: center;
+}
+
+li.myCarouselItemThumb {
+    font-size: 1em;
+}
+
+li.myCarouselItemThumb:hover,
+div.myCarouselPrevItem:hover,
+div.myCarouselNextItem:hover,
+li.myCarouselThumbPausePlay:hover {
+    cursor: pointer;
+}
+
+/*-------------------------------------------------------------------------
+                             NAVIGATION
+-------------------------------------------------------------------------*/
